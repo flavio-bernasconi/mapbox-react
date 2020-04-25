@@ -24,6 +24,8 @@ code {
 #root {
   float: right;
   width: 50%;
+}
+.bk {
   background-color: rgb(223, 223, 223);
 }
 .section-event {

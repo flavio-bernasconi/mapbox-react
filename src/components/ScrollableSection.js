@@ -31,7 +31,7 @@ export function ScrollableSection({ infoVenues, map, events }) {
   }, [currentId]);
 
   return (
-    <>
+    <div className="bk">
       <button className="btn-next" onClick={() => scrollToNext(currentId)}>
         next venue
       </button>
@@ -49,6 +49,6 @@ export function ScrollableSection({ infoVenues, map, events }) {
           </section>
         );
       })}
-    </>
+    </div>
   );
 }
