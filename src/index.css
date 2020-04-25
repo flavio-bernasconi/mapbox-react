@@ -212,7 +212,7 @@ button:focus {
 @media only screen and (max-width: 600px) {
   #map {
     width: 100%;
-    height: calc(100vh - 400px);
+    height: calc(100vh - 350px);
   }
 
   #root {
@@ -220,9 +220,11 @@ button:focus {
     position: absolute;
     bottom: 0;
     margin-left: 0;
-    height: 400px;
+    height: 350px;
   }
   #first {
+    height: auto;
+    margin-bottom: 60px;
     align-content: flex-start;
   }
   #first h1 {
@@ -230,11 +232,17 @@ button:focus {
   }
   .btn-next {
     right: 0;
-    bottom: 400px;
+    bottom: 350px;
     top: initial;
+    word-break: keep-all;
+    width: 80px;
+    height: 50px;
   }
   .btn-open {
     left: 0;
+    width: 80px;
+    height: 50px;
+    word-break: keep-all;
   }
   .event {
     display: flex;
