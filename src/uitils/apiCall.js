@@ -77,6 +77,7 @@ export function createSectionsCoordinate(dataset) {
 
 export function addMarkerVenue(coordinates, map) {
   const ids = Object.keys(coordinates);
+  map.addControl(new mapboxgl.FullscreenControl());
 
   ids.forEach((id) => {
     var el = document.createElement("div");

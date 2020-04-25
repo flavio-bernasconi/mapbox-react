@@ -12,6 +12,5 @@ export function createMap() {
     zoom: 11,
     bearing: 27,
     pitch: 45,
-    interactive: false,
   });
 }
