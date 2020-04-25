@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { SectionEventMobile } from "./SectionEventMobile";
 import SmoothScrolling from "./smoothScroll";
+import { Venues } from "./Venues";
+
 const initialCenter = [9.19, 45.4642];
 
 const intial = {
@@ -17,7 +19,15 @@ export function ScrollableSection({ infoVenues, map, events }) {
 
   const [currentId, setCurrentId] = useState("");
 
-  const getId = (id) => setCurrentId(id);
+  const getId = (id) => {
+    console.log(id);
+    setCurrentId(id);
+  };
+
+  const scrollToVenue = (id) => {
+    setCurrentId(id);
+    SmoothScrolling.scrollTo(id);
+  };
 
   const scrollToNext = (id) => {
     const next = uids.indexOf(id) + 1;
@@ -25,6 +35,10 @@ export function ScrollableSection({ infoVenues, map, events }) {
       SmoothScrolling.scrollTo(uids[next]);
     }
   };
+
+  // setTimeout(() => {
+  //   scrollToNext("Zb98xZKrZevvvedZ5rrj5urKO2");
+  // }, 3000);
 
   useEffect(() => {
     map.flyTo(infoVenues[currentId] || intial);
@@ -35,6 +49,8 @@ export function ScrollableSection({ infoVenues, map, events }) {
       <button className="btn-next" onClick={() => scrollToNext(currentId)}>
         next venue
       </button>
+      <Venues venues={infoVenues} passId={scrollToVenue} />
+
       <section id="first" className="section-event">
         <h1>
           <span className="white">Events</span> in evidence in the next period

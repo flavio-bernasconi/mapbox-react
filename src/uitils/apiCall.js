@@ -61,7 +61,9 @@ export function createSectionsCoordinate(dataset) {
   const ids = Object.keys(dataset);
   const container = {};
 
-  ids.forEach((id) => {
+  ids.forEach((id, i) => {
+    const name = dataset[ids[i]][0].nameVenue;
+
     return (container[id] = {
       center: dataset[id][0].cleanCoordinate,
       bearing: 27,
@@ -69,6 +71,7 @@ export function createSectionsCoordinate(dataset) {
       speed: 1,
       curve: 0.7,
       pitch: 45,
+      name,
     });
   });
 
@@ -82,6 +85,6 @@ export function addMarkerVenue(coordinates, map) {
   ids.forEach((id) => {
     var el = document.createElement("div");
     el.className = "marker";
-    new mapboxgl.Marker().setLngLat(coordinates[id].center).addTo(map);
+    new mapboxgl.Marker(el).setLngLat(coordinates[id].center).addTo(map);
   });
 }
