@@ -18,7 +18,7 @@ export function Venues({ venues, passId }) {
       </button>
       <div className={`container-venues ${isOpen ? "open" : "close"}`}>
         <div className={`venue-page `}>
-          <button className="btn-next" onClick={closeIt}>
+          <button className="btn-close" onClick={closeIt}>
             close
           </button>
           {uids.map((id) => {
