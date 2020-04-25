@@ -33,7 +33,7 @@ export function ScrollableSection({ infoVenues, map, events }) {
   return (
     <>
       <button className="btn-next" onClick={() => scrollToNext(currentId)}>
-        next
+        next venue
       </button>
       <section id="first" className=" section-event"></section>
       {uids.map((id) => {
