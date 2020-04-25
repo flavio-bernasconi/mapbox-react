@@ -129,6 +129,9 @@ button:focus {
     margin-left: 0;
     height: 400px;
   }
+  #first {
+    padding-top: 100px;
+  }
   .btn-next {
     right: 0;
     bottom: 400px;
