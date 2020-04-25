@@ -24,6 +24,7 @@ code {
 #root {
   float: right;
   width: 50%;
+  background-color: rgb(223, 223, 223);
 }
 .section-event {
   display: flex;
@@ -35,8 +36,26 @@ code {
 .event {
   width: 90%;
   transition: 1s;
+  border-top: solid 2px white;
 }
-
+#first {
+  height: 80vh;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 30px;
+  word-break: keep-all;
+}
+#first h1 {
+  width: 100%;
+  font-size: 5rem;
+  color: rgb(5, 9, 57);
+}
+#first span {
+  color: rgb(241, 85, 86);
+}
+#first span.white {
+  color: white;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -49,9 +68,11 @@ code {
   width: 33%;
   border-radius: 10px;
   font-weight: bold;
-  color: white;
-  background-color: rgb(241, 85, 86);
+  color: rgb(241, 85, 86);
+  background-color: white;
+  box-shadow: 2px 3px 10px rgb(207, 207, 207);
 }
+
 .name-location {
   text-align: center;
   font-size: 2.6rem;
@@ -60,7 +81,6 @@ code {
 }
 .name-event {
   color: rgb(5, 9, 57);
-
   font-size: 2rem;
   font-weight: bolder;
 }

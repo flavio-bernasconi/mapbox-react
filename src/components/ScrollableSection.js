@@ -35,7 +35,13 @@ export function ScrollableSection({ infoVenues, map, events }) {
       <button className="btn-next" onClick={() => scrollToNext(currentId)}>
         next venue
       </button>
-      <section id="first" className=" section-event"></section>
+      <section id="first" className="section-event">
+        <h1>
+          <span className="white">Events</span> in evidence in the next period
+          in <span>Milan</span>.
+        </h1>
+        <p>Scroll down</p>
+      </section>
       {uids.map((id) => {
         return (
           <section key={Math.random()} className="section-event" id={id}>
