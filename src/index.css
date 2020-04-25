@@ -60,6 +60,7 @@ code {
   justify-content: flex-start;
   padding: 30px;
   word-break: keep-all;
+  align-content: center;
 }
 #first h1 {
   width: 100%;
@@ -222,12 +223,18 @@ button:focus {
     height: 400px;
   }
   #first {
-    padding-top: 170px;
+    align-content: flex-start;
+  }
+  #first h1 {
+    font-size: 3rem;
   }
   .btn-next {
     right: 0;
     bottom: 400px;
     top: initial;
+  }
+  .btn-open {
+    left: 0;
   }
   .event {
     display: flex;
