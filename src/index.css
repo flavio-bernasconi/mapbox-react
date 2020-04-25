@@ -8,6 +8,7 @@ body {
   max-height: 100vh;
   max-width: 100%;
   overflow-x: hidden;
+  word-break: break-all;
 }
 
 code {
@@ -25,17 +26,65 @@ code {
   width: 50%;
 }
 .section-event {
-  height: 100vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30vh;
+}
+.event {
+  width: 90%;
+  transition: 1s;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .card {
-  height: 50vh;
+  margin-bottom: 40px;
+  margin-right: 15px;
+  padding: 30px;
+  width: 33%;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(241, 85, 86);
 }
-.blue {
-  background-color: blue;
+.name-location {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: bolder;
+  color: rgb(5, 9, 57);
 }
-.red {
-  background-color: red;
+.name-event {
+  color: rgb(5, 9, 57);
+
+  font-size: 2rem;
+  font-weight: bolder;
 }
+.visble {
+  transform: scale(1);
+}
+.hidden {
+  transform: scale(0.7);
+}
+
+.btn-next {
+  position: fixed;
+  right: 50%;
+  top: 0;
+  z-index: 9999;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: none;
+}
+button:focus {
+  outline: 0;
+}
+
 @media only screen and (max-width: 600px) {
   #map {
     width: 100%;
@@ -46,7 +95,18 @@ code {
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 400px;
     margin-left: 0;
+    height: 400px;
+  }
+  .event {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cards {
+    margin-right: 0;
+  }
+  .card {
+    width: 90%;
+    margin-right: 0;
   }
 }

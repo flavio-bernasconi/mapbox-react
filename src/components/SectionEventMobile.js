@@ -4,23 +4,27 @@ import VisibilitySensor from "react-visibility-sensor";
 export function SectionEventMobile({ events, id, isOnScreen }) {
   const onChange = (isVisible) => isVisible && isOnScreen(id);
   return (
-    <section>
+    <section className={`event`}>
       <VisibilitySensor onChange={onChange}>
         {({ isVisible }) => {
-          return (
-            <h1 className={` ${isVisible ? "blue" : "red"}`}>
-              {events[id][0].nameVenue}
-            </h1>
-          );
+          return <p className="name-location">{events[id][0].nameVenue}</p>;
         }}
       </VisibilitySensor>
-      {events[id].map((info) => {
-        return (
-          <div key={Math.random()}>
-            <p>{info.event.name}</p>
-          </div>
-        );
-      })}
+      <div className="cards">
+        {events[id].map((info) => {
+          const nameEvent = info.event.name;
+          const day = info.event.dates.start.localDate;
+          const hour = info.event.dates.start.localTime;
+
+          return (
+            <div key={Math.random()} className="card">
+              <p className="name-event">{nameEvent}</p>
+              <p>{day}</p>
+              <p>{hour}</p>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }

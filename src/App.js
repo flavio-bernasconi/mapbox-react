@@ -8,6 +8,7 @@ import {
 } from "./uitils/apiCall";
 import { ScrollableSection } from "./components/ScrollableSection";
 import { createMap } from "./uitils/createMap";
+
 const _ = require("lodash");
 
 const map = createMap();
@@ -33,13 +34,11 @@ export function App() {
 
   if (!_.isEmpty(venuesCoordinates)) {
     return (
-      <>
-        <ScrollableSection
-          events={eventsGroupedPerVenue}
-          infoVenues={venuesCoordinates}
-          map={map}
-        />
-      </>
+      <ScrollableSection
+        events={eventsGroupedPerVenue}
+        infoVenues={venuesCoordinates}
+        map={map}
+      />
     );
   } else {
     return <></>;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { SectionEvent } from "./SectionEvent";
 import { SectionEventMobile } from "./SectionEventMobile";
+import SmoothScrolling from "./smoothScroll";
 const initialCenter = [9.19, 45.4642];
 
 const intial = {
@@ -19,24 +19,30 @@ export function ScrollableSection({ infoVenues, map, events }) {
 
   const getId = (id) => setCurrentId(id);
 
+  const scrollToNext = (id) => {
+    const next = uids.indexOf(id) + 1;
+    if (next < uids.length) {
+      SmoothScrolling.scrollTo(uids[next]);
+    }
+  };
+
   useEffect(() => {
     map.flyTo(infoVenues[currentId] || intial);
   }, [currentId]);
 
   return (
-    <div>
-      <section className="section-event"></section>
+    <>
+      <button className="btn-next" onClick={() => scrollToNext(currentId)}>
+        next
+      </button>
+      <section id="first" className=" section-event"></section>
       {uids.map((id) => {
         return (
-          <section key={Math.random()} className="section-event">
-            {window.innerWidth > 600 ? (
-              <SectionEvent id={id} events={events} isOnScreen={getId} />
-            ) : (
-              <SectionEventMobile id={id} events={events} isOnScreen={getId} />
-            )}
+          <section key={Math.random()} className="section-event" id={id}>
+            <SectionEventMobile id={id} events={events} isOnScreen={getId} />
           </section>
         );
       })}
-    </div>
+    </>
   );
 }
