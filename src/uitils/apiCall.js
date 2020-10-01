@@ -4,11 +4,9 @@ const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 const accessKey = "k7WafyB240GbvXdwJ5wgeCq4LiceFjnY";
 const limitEvents = 200;
 
-const eventsEndPoint = () =>
-  `https://app.ticketmaster.com/discovery/v2/events?apikey=${accessKey}&locale=*&countryCode=IT&size=${limitEvents}&sort=date,asc&city=Milano`;
-
+const eventsEndPoint = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${accessKey}&locale=*&countryCode=US&size=${limitEvents}&sort=date,asc`;
 export const getEventsInfo = () => {
-  return ky.get(eventsEndPoint()).json();
+  return ky.get(eventsEndPoint).json();
 };
 
 export function getInfoVenues(dataset) {

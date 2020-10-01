@@ -3,12 +3,12 @@ import { SectionEventMobile } from "./SectionEventMobile";
 import SmoothScrolling from "./smoothScroll";
 import { Venues } from "./Venues";
 
-const initialCenter = [9.19, 45.4642];
+const initialCenter = [-90.19, 40.4642];
 
 const intial = {
   center: initialCenter,
   bearing: 27,
-  zoom: 12,
+  zoom: 3,
   speed: 1,
   curve: 0.7,
   pitch: 45,
@@ -53,8 +53,8 @@ export function ScrollableSection({ infoVenues, map, events }) {
 
       <section id="first" className="section-event">
         <h1>
-          <span className="white">Events</span> in evidence in the next period
-          in <span>Milan</span>.
+          <span className="white">Upcoming</span> events in the
+          <span> US</span>.
         </h1>
         <p>Scroll down</p>
       </section>
